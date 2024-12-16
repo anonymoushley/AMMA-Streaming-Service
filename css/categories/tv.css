@@ -30,26 +30,59 @@ body {
 
 .movie-card img {
     max-height: 150px; /* Adjust height for landscape orientation */
-    object-fit: cover;
-    width: 100%; /* Ensure the image stretches to fit the card's width */
-    height: auto;
-    border-radius: 5px;
+    object-fit: cover; /* Ensures the image fits without cropping */
+    width: 100%; /* Stretch to fit card's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #000; /* Optional: add a background color for padding areas */
 }
 
 .movies-row {
-    overflow-x: auto;
-    white-space: nowrap;
+    display: flex;
+    overflow: hidden; /* Hide scrollbar */
+    position: relative;
     padding: 10px 0;
 }
 
 .movie-card {
-    display: inline-block;
-    width: 250px; /* Increase width for landscape orientation */
-    height: 150px; /* Set height to match the image height */
+    flex-shrink: 0;
+    width: 250px; /* Ensure movie cards remain the same size */
+    height: 150px;
     margin-right: 15px;
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Arrow buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
 }
 
 /* Movie Card Hover Effect */

@@ -1,0 +1,137 @@
+/* Global Styles */
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar, .offcanvas {
+    background-color: #141414;
+    color: #fff;
+}
+
+.offcanvas .list-group-item {
+    background-color: #141414;
+    border: none;
+    color: #fff;
+}
+
+.offcanvas .list-group-item a {
+    color: #fff;
+}
+
+.offcanvas .list-group-item:hover {
+    background-color: #333;
+}
+
+.trending-video {
+    height: 60vh;
+    object-fit: cover;
+}
+
+.movie-card img {
+    max-height: 150px; /* Adjust height for landscape orientation */
+    object-fit: cover;
+    width: 100%; /* Ensure the image stretches to fit the card's width */
+    height: auto;
+    border-radius: 5px;
+}
+
+.movies-row {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.movie-card {
+    display: inline-block;
+    width: 250px; /* Increase width for landscape orientation */
+    height: 150px; /* Set height to match the image height */
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Movie Card Hover Effect */
+.movie-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgb(255, 255, 255, 0.2);
+}
+
+/* Movie Card Overlay */
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 10px;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Movie Title */
+.movie-overlay h5 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Play Button */
+.movie-overlay .play-button {
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px; /* Space between play button and add button */
+}
+
+/* Hover Effect on Play Button */
+.movie-overlay .play-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Add to My List Button */
+.movie-overlay .add-to-list-button {
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect on Add to List Button */
+.movie-overlay .add-to-list-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* NAV BAR */
+nav.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}

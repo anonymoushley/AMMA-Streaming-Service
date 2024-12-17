@@ -1,46 +1,136 @@
-div.img1{background-image: url('../12.jpg');}
-div.image {
-  opacity: 1;
-  display: block;
-  transition: .5s ease;
-  backface-visibility: hidden;
+/* Global Styles */
+body {
+  background-color: #000;
+  color: #fff;
 }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
+.navbar, .offcanvas {
+  background-color: #141414;
+  color: #fff;
+}
+
+.offcanvas .list-group-item {
+  background-color: #141414;
+  border: none;
+  color: #fff;
+}
+
+.offcanvas .list-group-item a {
+  color: #fff;
+}
+
+.offcanvas .list-group-item:hover {
+  background-color: #333;
+}
+
+.trending-video {
+  height: 60vh;
+  object-fit: cover;
+}
+
+.movie-card img {
+  max-height: 225px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movies-row {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+.movie-card {
+  display: inline-block;
+  width: 150px;
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Movie Card Hover Effect */
+.movie-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgb(255, 255, 255, 0.2);
+}
+
+/* Movie Card Overlay */
+.movie-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 10px;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Movie Title */
+.movie-overlay h5 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1rem;
   text-align: center;
 }
 
-.container:hover .image {
-  opacity: 0.3;
+/* Play Button */
+.movie-overlay .play-button {
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px; /* Space between play button and add button */
 }
 
-.container:hover .middle {
-  opacity: 1;
+/* Hover Effect on Play Button */
+.movie-overlay .play-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
-.text {
-  background-color: #04AA6D;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+/* Add to My List Button */
+.movie-overlay .add-to-list-button {
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.header {
-      background-color:white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1030;
+/* Hover Effect on Add to List Button */
+.movie-overlay .add-to-list-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-body {
-    background-color: #f9f8f7;
+/*NAV BAR*/
+nav.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
 }

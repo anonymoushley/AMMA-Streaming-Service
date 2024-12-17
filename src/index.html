@@ -106,8 +106,8 @@ div.img1{background-image: url('../12.jpg');}
     <div class="row">
       <div class=" col-lg-3 mt-5">
         <div class="stranger-things">STRANGER<br><h1>THINGS</h1></div>
-        <div style="margin-left:50px;"><h6>When a young boy vanishes, a small town uncovers a mystery involving secrets, experiments, terrifying supernatural forces and a strange little girl</h6></div>
-        <div style="margin-left:60px;"><button class="play-buttonn">Play</button>
+        <div style="margin-left:70px;"><h6>When a young boy vanishes, a small town uncovers a mystery involving secrets, experiments, terrifying supernatural forces and a strange little girl</h6></div>
+        <div style="margin-left:60px;"><button class="play-buttonn"> Play</button>
           <button class="more-info-button">More Info</button>
         </div>
       </div>
@@ -116,6 +116,84 @@ div.img1{background-image: url('../12.jpg');}
           </div>
         </div>
       </div>
+
+<!-- Movies Section -->
+<div class="px-4 py-3">
+  <h2 class="mb-1">Popular Animes</h2>
+  <div class="movies-container position-relative">
+      <!-- Left Arrow -->
+      <button class="arrow arrow-left">
+          <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="movies-row d-flex">
+          <div class="moviee-card">
+              <img src="../../imgs/anime/dragonballz.jpg" alt="arifureta">
+              <div class="movie-overlay">
+                  <h5>Arifureta</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+          <div class="moviee-card">
+              <img src="../../imgs/anime/dragonball.jpg" alt="bleach">
+              <div class="movie-overlay">
+                  <h5>Bleach</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+          <div class="moviee-card">
+              <img src="../../imgs/anime/naruto.jpg" alt="Chi">
+              <div class="movie-overlay">
+                  <h5>Chi</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+          <div class="moviee-card">
+              <img src="../../imgs/anime/slamdunk.jpg" alt="dandadan">
+              <div class="movie-overlay">
+                  <h5>Dandadan</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+          <div class="moviee-card">
+              <img src="../../imgs/anime/codegeass.jpg" alt="Tower of God">
+              <div class="movie-overlay">
+                  <h5>Tower of God</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+          <div class="moviee-card">
+              <img src="../../imgs/anime/jujutsu.jpg" alt="Nageki">
+              <div class="movie-overlay">
+                  <h5>Nageki</h5>
+                  <button class="play-button">
+                      <i class="bi bi-play-circle"></i>
+                  </button>
+                  <button class="add-to-list-button">Add to My List</button>
+              </div>
+          </div>
+      </div>
+      <!-- Right Arrow -->
+      <button class="arrow arrow-right">
+          <i class="bi bi-chevron-right"></i>
+      </button>
+  </div>
+</div>
+
         <!-- Movies Section -->
         <div class="px-4 py-3">
           <h2 class="mb-1">Top Picks</h2>
@@ -184,4 +262,25 @@ div.img1{background-image: url('../12.jpg');}
       </div>
   </div>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const movieContainers = document.querySelectorAll(".movies-container");
+
+  movieContainers.forEach(container => {
+      const moviesRow = container.querySelector(".movies-row");
+      const leftArrow = container.querySelector(".arrow-left");
+      const rightArrow = container.querySelector(".arrow-right");
+
+      const scrollAmount = 300; 
+
+      leftArrow.addEventListener("click", () => {
+          moviesRow.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      rightArrow.addEventListener("click", () => {
+          moviesRow.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          });
+      });
+  });
+</script>
 </html>

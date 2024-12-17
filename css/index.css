@@ -259,3 +259,16 @@ nav.header {
 .arrow-right {
   right: 10px;
 }
+
+.search-box {
+  background-color: #333; /* Blackish background color */
+  color: #fff; /* White text color */
+  border: 1px solid #444; /* Darker border color */
+}
+.search-box::placeholder {
+  color: #bbb; /* Light gray placeholder text */
+}
+.search-box:focus {
+  background-color: #444; /* Slightly lighter blackish background color on focus */
+  color: #fff;
+ } /* White text

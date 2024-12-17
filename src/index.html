@@ -69,10 +69,10 @@ div.img1{background-image: url('../12.jpg');}
         </div>
         <div class="offcanvas-body">
             <ul class="list-group">
-                <li class="list-group-item">
+              <a href="index.html" class="text-decoration-none"><li class="list-group-item">
                     <i class="bi bi-house me-2"></i>
-                    <a href="index.html" class="text-decoration-none">Home</a>
-                </li>
+                    Home
+                </li></a>
                 <li class="list-group-item">
                     <i class="bi bi-search me-2"></i>
                     <button class="btn btn-link text-decoration-none p-0 text-white" data-bs-toggle="collapse" data-bs-target="#searchBar" aria-expanded="false" aria-controls="searchBar">
@@ -82,9 +82,9 @@ div.img1{background-image: url('../12.jpg');}
                 <div class="collapse" id="searchBar">
                     <input type="text" class="form-control mt-2 bg-secondary text-white border-0" placeholder="Search...">
                 </div>
-                <li class="list-group-item">
+                <a href="../src/categories/movies.html" class="text-decoration-none"><li class="list-group-item">
                     <i class="bi bi-film me-2"></i>
-                    <a href="../src/categories/movies.html" class="text-decoration-none">Movies</a>
+                    Movies</a>
                 </li>
                 <li class="list-group-item">
                     <i class="bi bi-tv me-2"></i>
@@ -103,23 +103,32 @@ div.img1{background-image: url('../12.jpg');}
     </div>
 
   <div class="container-fluid mt-5 selection">
-    <div class="row">
-      <div class=" col-lg-3 mt-5">
-        <div class="stranger-things">STRANGER<br><h1>THINGS</h1></div>
-        <div style="margin-left:70px;"><h6>When a young boy vanishes, a small town uncovers a mystery involving secrets, experiments, terrifying supernatural forces and a strange little girl</h6></div>
-        <div style="margin-left:60px;"><button class="play-buttonn"> Play</button>
-          <button class="more-info-button">More Info</button>
-        </div>
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-4 col-md-4 col-12 mt-5 text-center text-lg-start">
+      <div class="stranger-things">STRANGER<br><h1>THINGS</h1></div>
+      <div>
+        <p class="mt-3 px-4">
+          When a young boy vanishes, a small town uncovers a mystery involving secrets, experiments, terrifying supernatural forces, and a strange little girl.
+        </p>
       </div>
-        <div class=" col-lg-8" style="width:850px;margin-left:90px;">
-          <div><img class="card-img-top image" src="../imgs/st.jpg" alt="Card image" style="width:100%"></div>
-          </div>
-        </div>
+      <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3 px-5">
+        <button class="play-buttonn">Play</button>
+        <button class="more-info-button">More Info</button>
       </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-8 col-md-8 col-12 mt-2" style="width:837px;">
+      <img class="img-fluid" src="../imgs/st.jpg" alt="Stranger Things Image">
+    </div>
+  </div>
+</div>
+
 
 <!-- Movies Section -->
-<div class="px-4 py-3">
-  <h2 class="mb-1">Popular Animes</h2>
+<div class="px-4">
+  <h2>Popular Animes</h2>
   <div class="movies-container position-relative">
       <!-- Left Arrow -->
       <button class="arrow arrow-left">

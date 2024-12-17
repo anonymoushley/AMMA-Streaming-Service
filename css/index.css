@@ -181,3 +181,17 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+/* Hover Effect on Add to List Button */
+.movie-overlay .add-to-list-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*NAV BAR*/
+nav.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}

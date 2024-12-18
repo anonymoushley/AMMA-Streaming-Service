@@ -267,8 +267,6 @@ nav.header {
   color: #fff;
  } 
 
-
-
  .dropdown-menu-dark {
      background-color: #343a40; /* Blackish gray color */
      color: #fff;
@@ -287,5 +285,4 @@ nav.header {
  .search-box::placeholder {
      color: #adb5bd; /* Placeholder text color */
  }
-
 

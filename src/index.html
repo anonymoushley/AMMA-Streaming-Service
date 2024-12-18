@@ -29,6 +29,7 @@
 }
 div.img1{background-image: url('../12.jpg');}
 </style>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark header">
         <div class="container-fluid">
@@ -60,16 +61,20 @@ div.img1{background-image: url('../12.jpg');}
                         </ul>
                     </li>
                 </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle"></i> Profile
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                    <li><a class="dropdown-item" href="#">View Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="logout.html">Log Out</a></li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                   
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Profile
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end drp-dwn" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">View Profile</a></li>
+                            <li><a class="dropdown-item" href="mylist.html">My List</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.html">Log Out</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -103,6 +108,12 @@ div.img1{background-image: url('../12.jpg');}
                         Recently Added
                     </li>
                 </a>
+                <a href="contact.html" class="text-decoration-none">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-envelope me-2"></i>
+                        Contact Us
+                    </li>
+                </a>
                 <a href="about.html" class="text-decoration-none">
                     <li class="list-group-item d-flex align-items-center">
                         <i class="bi bi-info-circle me-2"></i>
@@ -113,7 +124,6 @@ div.img1{background-image: url('../12.jpg');}
         </div>
     </div>
     
-
   <div class="container-fluid mt-5 selection">
   <div class="row">
     <!-- Left Column -->

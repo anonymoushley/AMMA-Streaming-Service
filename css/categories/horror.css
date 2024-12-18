@@ -23,11 +23,6 @@ body {
     background-color: #333;
 }
 
-.trending-video {
-    height: 60vh;
-    object-fit: cover;
-}
-
 .movie-card img {
     max-height: 150px; /* Adjust height for landscape orientation */
     object-fit: cover; /* Ensures the image fits without cropping */
@@ -167,4 +162,39 @@ nav.header {
     left: 0;
     right: 0;
     z-index: 1030;
+}
+
+.trending-video {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover; /* Ensures full coverage without cropping */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40%; /* Overlay takes 40% of the width */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.video-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.video-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.video-overlay button {
+    font-size: 1rem;
+    padding: 10px 20px;
 }

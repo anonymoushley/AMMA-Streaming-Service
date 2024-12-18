@@ -13,6 +13,7 @@ body {
   background-color: #141414;
   border: none;
   color: #fff;
+  align-items: center;
 }
 
 .offcanvas .list-group-item a {

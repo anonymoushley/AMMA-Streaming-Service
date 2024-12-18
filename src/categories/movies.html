@@ -26,22 +26,20 @@ e<!DOCTYPE html>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="tv.html">TV Shows</a>
+                        <form class="d-flex">
+                            <input class="form-control me-2 search-box" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="movies.html">Movies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../recently.html">Recently Added</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../mylist.html">My Lists</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../contact.html">Contact Us</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="anime.html">Anime</a></li>
+                            <li><a class="dropdown-item" href="kdrama.html">K-Drama</a></li>
+                            <li><a class="dropdown-item" href="movies.html">Movies</a></li>
+                            <li><a class="dropdown-item" href="tv.html">TV-Series</a></li>
+                            <li><a class="dropdown-item" href="horror.html">Horror</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -56,11 +54,13 @@ e<!DOCTYPE html>
         </div>
         <div class="offcanvas-body">
             <ul class="list-group">
-                <li class="list-group-item">
-                    <i class="bi bi-house me-2"></i>
-                    <a href="../index.html" class="text-decoration-none">Home</a>
-                </li>
-                <li class="list-group-item">
+                <a href="index.html" class="text-decoration-none">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-house me-2"></i>
+                        Home
+                    </li>
+                </a>
+                <li class="list-group-item d-flex align-items-center">
                     <i class="bi bi-search me-2"></i>
                     <button class="btn btn-link text-decoration-none p-0 text-white" data-bs-toggle="collapse" data-bs-target="#searchBar" aria-expanded="false" aria-controls="searchBar">
                         Search
@@ -69,26 +69,18 @@ e<!DOCTYPE html>
                 <div class="collapse" id="searchBar">
                     <input type="text" class="form-control mt-2 bg-secondary text-white border-0" placeholder="Search...">
                 </div>
-                <li class="list-group-item">
-                    <i class="bi bi-film me-2"></i>
-                    <a href="movies.html" class="text-decoration-none">Movies</a>
-                </li>
-                <li class="list-group-item">
-                    <i class="bi bi-tv me-2"></i>
-                    <a href="tv.html" class="text-decoration-none">TV Shows</a>
-                </li>
-                <li class="list-group-item">
-                    <i class="bi bi-arrow-through-heart me-2"></i>
-                    <a href="kdrama.html" class="text-decoration-none">K Drama</a>
-                </li>
-                <li class="list-group-item">
-                    <i class="bi bi-book me-2"></i>
-                    <a href="anime.html" class="text-decoration-none">Anime</a>
-                </li>
-                <li class="list-group-item">
-                    <i class="bi bi-emoji-dizzy"></i>
-                    <a href="Horror.html" class="text-decoration-none">Horror</a>
-                </li>
+                <a href="recently.html" class="text-decoration-none">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-archive me-2"></i>
+                        Recently Added
+                    </li>
+                </a>
+                <a href="about.html" class="text-decoration-none">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-info-circle me-2"></i>
+                        About Us
+                    </li>
+                </a>
             </ul>
         </div>
     </div>

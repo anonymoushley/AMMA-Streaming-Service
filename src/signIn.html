@@ -1,117 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  </head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign-In</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('../imgs/bg.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+        }
 
-<link rel="stylesheet" type="text/css" href="DataTables/css.css" media="screen" />
-<script src="DataTables/a.js"></script>
-<script src="DataTables/b.js"></script>
+        .background-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black; 
+            opacity: 0.80; 
+            z-index: 1;
+        }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
 
-body {
-  margin: 0;
-  font-family: Arial;
-}
+        .logo-container img {
+            width: 130px;
+        }
 
-/* The grid: Four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.85); 
+            border-radius: 10px;
+        }
 
-/* Style the images inside the grid */
-.column img {
-  opacity: 0.8;
-  cursor: pointer;
-}
+        .logo {
+            font-size: 2.5rem;
+            color: #f75419; /* Netflix red */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-.column img:hover {
-  opacity: 1;
-}
+        .login-form h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+            font-size: 1rem;
+        }
 
-/* The expanding image container */
-.container {
-  position: relative;
-  display: none;
-}
+        .login-form input:focus {
+            outline: none;
+            border: 1px solid #f75419;
+        }
 
-/* Expanding image text */
-#imgtext {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: white;
-  font-size: 20px;
-}
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #f75419;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-/* Closable button inside the expanded image */
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-}
-</style>
+        .btn:hover {
+            background-color: #e8451f;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .options a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .signup {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .signup a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .captcha-info {
+            font-size: 0.75rem;
+            color: #b3b3b3;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
+    <!-- Background container -->
+    <div class="background-container">
+        <!-- Logo in the upper-left corner -->
+        <div class="logo-container">
+            <img src="../imgs/ammaa.png" alt="AMMA Logo">
+        </div>
 
-<div style="text-align:center">
-  <h2>Tabbed Image Gallery</h2>
-  <p>Click on the images below:</p>
-</div>
-
-<!-- The four columns -->
-<div class="row">
-  <div class="column">
-    <img src="5.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="3.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="img_mountains.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="img_lights.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
-  </div>
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-<script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-}
-</script>
-
-
+        <!-- Login box -->
+        <div class="login-container">
+          <h1 class="logo">AMMA</h1>
+          <form class="login-form">
+              <h2>Sign Up</h2>
+              <!-- Row for First Name and Last Name -->
+              <div class="row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                  <div class="col" style="flex: 1;">
+                      <input type="text" class="form-control" id="fn" placeholder="First Name" name="fn" required>
+                  </div>
+                  <div class="col" style="flex: 1;">
+                      <input type="text" class="form-control" id="ln" placeholder="Last Name" name="ln" required>
+                  </div>
+              </div>
+      
+              <!-- Email Input -->
+              <div class="input-group" style="position: relative; margin-bottom: 10px;">
+                <!-- Icon -->
+                <span class="input-group-text" 
+                      style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 2; background: none; border: none; padding: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                        <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"></path>
+                        <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"></path>
+                    </svg>
+                </span>
+                <!-- Input Field -->
+                <input type="email" class="form-control" placeholder="Email or phone number" 
+                       style="padding-left: 40px;" required>
+            </div>
+            
+              <div class="input-group" style="margin-bottom: 10px;">
+                <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+              <!-- Row for Password and Confirm Password -->
+              <div class="row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                  <!-- Password -->
+                  <div class="col" style="flex: 1; position: relative;">
+                      <span class="input-group-text" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                          </svg>
+                      </span>
+                      <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" style="padding-left: 35px;" required>
+                  </div>
+      
+                  <!-- Re-enter Password -->
+                  <div class="col" style="flex: 1; position: relative;">
+                      <span class="input-group-text" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                          </svg>
+                      </span>
+                      <input type="password" class="form-control" id="pwd-confirm" placeholder="Re-enter Password" name="password-confirm" style="padding-left: 35px;" required>
+                  </div>
+              </div>
+      </form>
+              <!-- Submit Button -->
+              <a href=index.html><button type="submit" class="btn" style="width: 100%; padding: 15px; background-color: #f75419; color: white; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">
+                  Sign Up
+              </button></a>
+      
+              <!-- Options -->
+              <div class="options" style="margin-top: 15px; display: flex; justify-content: space-between; font-size: 0.9rem;">
+                  <label>
+                      <input type="checkbox"> Remember me
+                  </label>
+                  <a href="#" style="color: #b3b3b3; text-decoration: none;">Need help?</a>
+              </div>
+      
+              <!-- Sign-in Link -->
+              <div class="signup" style="margin-top: 20px; font-size: 0.9rem;">
+                  <p>Already have an account? <a href="../src/whoswatching.html" style="color: white; text-decoration: none; font-weight: bold;">Sign in</a></p>
+                  <p class="captcha-info" style="font-size: 0.75rem; color: #b3b3b3; line-height: 1.4;">
+                      This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#" style="color: #b3b3b3;">Learn more</a>.
+                  </p>
+              </div>
+          
+      </div>
+      
+    </div>
+</body>
 </html>

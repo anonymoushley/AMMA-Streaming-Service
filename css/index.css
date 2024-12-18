@@ -261,6 +261,7 @@ nav.header {
   right: 10px;
 }
 
+
 .search-box {
   background-color: #333; /* Blackish background color */
   color: #fff; /* White text color */
@@ -273,3 +274,26 @@ nav.header {
   background-color: #444; /* Slightly lighter blackish background color on focus */
   color: #fff;
  } 
+
+
+
+ .dropdown-menu-dark {
+     background-color: #343a40; /* Blackish gray color */
+     color: #fff;
+ }
+ .dropdown-menu-dark .dropdown-item {
+     color: #fff;
+ }
+ .dropdown-menu-dark .dropdown-item:hover {
+     background-color: #495057; /* Darker gray on hover */
+ }
+ .search-box {
+     background-color: #343a40; /* Blackish gray color */
+     color: #fff;
+     border: 1px solid #495057; /* Border color */
+ }
+ .search-box::placeholder {
+     color: #adb5bd; /* Placeholder text color */
+ }
+
+

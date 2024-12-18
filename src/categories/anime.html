@@ -10,13 +10,13 @@
     <title>Anime</title>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark header">
         <div class="container-fluid">
             <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="amma navbar-brand" href="#">
+            <a class="amma navbar-brand" href="../index.html" onclick="resetCategory()">
                 <img src="../../imgs/ammaa.png" alt="AMMA" width="100" height="30">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,31 +32,34 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="anime.html">Anime</a></li>
-                            <li><a class="dropdown-item" href="kdrama.html">K-Drama</a></li>
-                            <li><a class="dropdown-item" href="movies.html">Movies</a></li>
-                            <li><a class="dropdown-item" href="tv.html">TV-Series</a></li>
-                            <li><a class="dropdown-item" href="horror.html">Horror</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="anime.html" onclick="setCategory('Anime')">Anime</a></li>
+                            <li><a class="dropdown-item" href="kdrama.html" onclick="setCategory('K-Drama')">K-Drama</a></li>
+                            <li><a class="dropdown-item" href="movies.html" onclick="setCategory('Movies')">Movies</a></li>
+                            <li><a class="dropdown-item" href="tv.html" onclick="setCategory('TV-Series')">TV-Series</a></li>
+                            <li><a class="dropdown-item" href="horror.html" onclick="setCategory('Horror')">Horror</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Profile
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end drp-dwn" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">View Profile</a></li>
+                            <li><a class="dropdown-item" href="../mylist.html">My List</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.html">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle"></i> Profile
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                    <li><a class="dropdown-item" href="#">View Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="../whoswatching.html">Log Out</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
-
-    <!-- Sidebar Offcanvas -->
+    
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="sidebarLabel">Menu</h5>
@@ -64,7 +67,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="list-group">
-                <a href="../index.html" class="text-decoration-none">
+                <a href="../index.html" class="text-decoration-none" onclick="resetCategory()">
                     <li class="list-group-item d-flex align-items-center">
                         <i class="bi bi-house me-2"></i>
                         Home
@@ -94,6 +97,7 @@
             </ul>
         </div>
     </div>
+    
 
     <!-- Main Content -->
     <div class="container-fluid p-0">
@@ -261,23 +265,48 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-    const movieContainers = document.querySelectorAll(".movies-container");
+        const movieContainers = document.querySelectorAll(".movies-container");
 
-    movieContainers.forEach(container => {
-        const moviesRow = container.querySelector(".movies-row");
-        const leftArrow = container.querySelector(".arrow-left");
-        const rightArrow = container.querySelector(".arrow-right");
+        movieContainers.forEach(container => {
+            const moviesRow = container.querySelector(".movies-row");
+            const leftArrow = container.querySelector(".arrow-left");
+            const rightArrow = container.querySelector(".arrow-right");
 
-        const scrollAmount = 300; 
+            const scrollAmount = 300; 
 
-        leftArrow.addEventListener("click", () => {
-            moviesRow.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        });
+            leftArrow.addEventListener("click", () => {
+                moviesRow.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
 
-        rightArrow.addEventListener("click", () => {
-            moviesRow.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            rightArrow.addEventListener("click", () => {
+                moviesRow.scrollBy({ left: scrollAmount, behavior: "smooth" });
             });
         });
+
+        // Get the selected category on page load
+        getCategory();
     });
+
+    // Function to set the selected category
+    function setCategory(category) {
+        localStorage.setItem('selectedCategory', category);
+        document.getElementById('navbarDropdown').textContent = category;
+    }
+
+    // Function to get the selected category on page load
+    function getCategory() {
+        var category = localStorage.getItem('selectedCategory');
+        if (category) {
+            document.getElementById('navbarDropdown').textContent = category;
+        }
+    }
+
+    // Function to reset the selected category
+    function resetCategory() {
+        localStorage.removeItem('selectedCategory');
+        document.getElementById('navbarDropdown').textContent = 'Categories';
+    }
 </script>
+
+  
 </html>

@@ -198,3 +198,36 @@ nav.header {
     font-size: 1rem;
     padding: 10px 20px;
 }
+
+.search-box {
+    background-color: #333; /* Blackish background color */
+    color: #fff; /* White text color */
+    border: 1px solid #444; /* Darker border color */
+  }
+  .search-box::placeholder {
+    color: #bbb; /* Light gray placeholder text */
+  }
+  .search-box:focus {
+    background-color: #444; /* Slightly lighter blackish background color on focus */
+    color: #fff;
+   } 
+  
+   .dropdown-menu-dark {
+       background-color: #343a40; /* Blackish gray color */
+       color: #fff;
+   }
+   .dropdown-menu-dark .dropdown-item {
+       color: #fff;
+   }
+   .dropdown-menu-dark .dropdown-item:hover {
+       background-color: #495057; /* Darker gray on hover */
+   }
+   .search-box {
+       background-color: #343a40; /* Blackish gray color */
+       color: #fff;
+       border: 1px solid #495057; /* Border color */
+   }
+   .search-box::placeholder {
+       color: #adb5bd; /* Placeholder text color */
+   }
+  

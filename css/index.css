@@ -36,16 +36,8 @@ body {
   padding: 10px 0;
 }
 
-.movie-card img {
-  max-height: 225px;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
 
-
-.movie-card {
+.moviee-card {
   display: inline-block;
   width: 150px;
   margin-right: 15px;
@@ -55,7 +47,7 @@ body {
 }
 
 /* Movie Card Hover Effect */
-.movie-card:hover {
+.moviee-card:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 15px rgb(255, 255, 255, 0.2);
 }
@@ -80,7 +72,7 @@ body {
   padding: 10px;
 }
 
-.movie-card:hover .movie-overlay {
+.moviee-card:hover .movie-overlay {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

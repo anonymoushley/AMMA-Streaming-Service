@@ -1,6 +1,7 @@
 /* Global Styles */
 body {
-    background-color: #000;
+    background: rgb(162,87,4);
+    background: linear-gradient(90deg, rgba(162,87,4,1) 0%, rgba(0,0,0,1) 50%, rgba(162,87,4,1) 100%, rgba(0,212,255,1) 100%);
     color: #fff;
 }
 

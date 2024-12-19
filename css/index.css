@@ -166,6 +166,14 @@ button {
   background-color: #555;
   color: #fff;
 }
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(255, 136, 0);
+  color: black;
+  text-align: center;
+}
 
 .more-info-button:hover {
   background-color: #777;
